@@ -8,10 +8,7 @@ type CurrencyInputProps = {
 };
 const FormCurrencyInput: React.FC<CurrencyInputProps> = (props) => {
   const handleChange = (event, originalValue, maskedValue) => {
-    console.log('originalValue', originalValue);
     props.setValue(originalValue)
-    console.log('maskedValue', maskedValue);
-    console.log(event, originalValue, maskedValue);
   };
 
   return (

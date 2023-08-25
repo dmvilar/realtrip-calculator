@@ -18,7 +18,7 @@ function App() {
   const [valorTotal, setValorTotal] = useState(0);
 
   const [vooIdaProps, setVooIdaProps] = useState({
-    qtdMilhas:null,
+    qtdMilhas:0,
     valorMilheiro: 0,
     valorTaxa: 0,
     qtdCpf: 1,
@@ -34,14 +34,6 @@ function App() {
   
 
   useEffect(() => {
-    console.log('<><><><><><><><>');
-    
-    // console.log('valorTotalIda', valorTotalIda);
-    // console.log('valorTotalVolta', valorTotalVolta);
-    // console.log('mostrarVolta', mostrarVolta);
-    console.log('vooVoltaProps.qtdMilhas', vooVoltaProps.qtdMilhas);
-    console.log('vooIdaProps.qtdMilhas', vooIdaProps.qtdMilhas);
-
     if(mostrarVolta){
       setValorTotal(valorTotalIda+valorTotalVolta)
     }

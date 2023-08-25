@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   Box,
   Stack,
@@ -23,11 +24,6 @@ const Calculator: React.FC<CalculatorProps> = (props) => {
   const [qtdCpfs, setQtdCpfs] = React.useState(props.qtdCpf);
 
   useEffect(() => {
-    console.log('<><><><><><><><> XXXXXX');
-    
-    // console.log('valorMilheiro', valorMilheiro);
-    // console.log('valorTaxa', valorTaxa);
-    // console.log('qtdMilhas', qtdMilhas);
     const newObj = {...props, qtdMilhas: qtdMilhas, valorMilheiro: valorMilheiro, valorTaxa: valorTaxa, qtdCpfs: qtdCpfs};
     props.setVooProps(newObj);
     
