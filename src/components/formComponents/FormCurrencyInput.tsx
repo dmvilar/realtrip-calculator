@@ -20,7 +20,7 @@ const FormCurrencyInput: React.FC<CurrencyInputProps> = (props) => {
       <CurrencyInput
       value={props.value}
       onChangeValue={(event, originalValue, maskedValue) => {handleChange(event, originalValue, maskedValue)}}
-      InputElement={<Input bg={'white'}/>}
+      InputElement={<input inputMode="decimal" type="text" pattern="[0-9]*(.[0-9]+)?" role="spinbutton" aria-valuemin={0} aria-valuemax={9007199254740991} aria-valuenow={0} aria-valuetext="0.00" autoComplete="off" autoCorrect="off" className="chakra-input css-1wty6e9" value={props.value}/>}
     />
     </FormControl>
   );
