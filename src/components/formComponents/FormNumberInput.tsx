@@ -35,7 +35,7 @@ const FormNumberInput: React.FC<NumberInputProps> = (props) => {
     };
   const input = getInputProps()
   
-  const handleChange = (value) => {
+  const handleChange = (value:any) => {
     if(typeof(value) === typeof(0)){
       props.setValue(value);
     }

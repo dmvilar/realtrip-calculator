@@ -29,7 +29,7 @@ const FormNumberInputWithRange: React.FC<NumberInputProps> = (props) => {
       props.setValue(props.value - 1);
   };
 
-  const handleChange = (value) => {
+  const handleChange = (value:any) => {
     
     if(typeof(value) === typeof(0)){
       props.setValue(value);
@@ -47,7 +47,7 @@ const FormNumberInputWithRange: React.FC<NumberInputProps> = (props) => {
       <FormLabel>{props.label}</FormLabel>
       <HStack maxW="320px">
         <Button onClick={dec}>-</Button>
-        <input inputMode="decimal" type="text" pattern="[0-9]*(.[0-9]+)?" role="spinbutton" aria-valuemin="0" aria-valuemax="9007199254740991" aria-valuenow="0" aria-valuetext="0.00" autoComplete="off" autoCorrect="off" className="chakra-input css-1wty6e9" value={props.value} onChange={handleChange}/>
+        <input inputMode="decimal" type="text" pattern="[0-9]*(.[0-9]+)?" role="spinbutton" aria-valuemin={0} aria-valuemax={9007199254740991} aria-valuenow={0} aria-valuetext="0.00" autoComplete="off" autoCorrect="off" className="chakra-input css-1wty6e9" value={props.value} onChange={handleChange}/>
         <Button onClick={inc}>+</Button>
       </HStack>
       <Flex>
