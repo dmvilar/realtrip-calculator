@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FormControl, FormLabel, Input } from "@chakra-ui/react";
-import React, { ChangeEvent } from "react";
+import React from "react";
 import { CurrencyInput } from 'react-currency-mask';
 type CurrencyInputProps = {
   label: string;

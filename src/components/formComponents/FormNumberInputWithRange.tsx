@@ -1,15 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   Button,
   Flex,
   FormControl,
   FormLabel,
   HStack,
-  Input,
   Slider,
   SliderFilledTrack,
   SliderThumb,
   SliderTrack,
-  useNumberInput,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -21,13 +20,6 @@ type NumberInputProps = {
   value: number;
 };
 const FormNumberInputWithRange: React.FC<NumberInputProps> = (props) => {
-  const { getInputProps } = useNumberInput({
-    step: props.step || 1,
-    defaultValue: 1,
-    min: 0,
-    precision: props.precision || 0,
-  });
-
   const inc = () => {
     if(props.value < 300)
       props.setValue(props.value + 1);
@@ -55,7 +47,7 @@ const FormNumberInputWithRange: React.FC<NumberInputProps> = (props) => {
       <FormLabel>{props.label}</FormLabel>
       <HStack maxW="320px">
         <Button onClick={dec}>-</Button>
-        <input inputmode="decimal" type="text" pattern="[0-9]*(.[0-9]+)?" role="spinbutton" aria-valuemin="0" aria-valuemax="9007199254740991" aria-valuenow="0" aria-valuetext="0.00" autocomplete="off" autocorrect="off" class="chakra-input css-1wty6e9" value={props.value} onChange={handleChange}/>
+        <input inputMode="decimal" type="text" pattern="[0-9]*(.[0-9]+)?" role="spinbutton" aria-valuemin="0" aria-valuemax="9007199254740991" aria-valuenow="0" aria-valuetext="0.00" autoComplete="off" autoCorrect="off" className="chakra-input css-1wty6e9" value={props.value} onChange={handleChange}/>
         <Button onClick={inc}>+</Button>
       </HStack>
       <Flex>
