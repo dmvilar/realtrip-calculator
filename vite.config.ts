@@ -1,14 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA, VitePWAOptions } from "vite-plugin-pwa";
-import { getManifest } from 'workbox-build';
-// https://vitejs.dev/config/
 
 const manifestForPlugin: Partial<VitePWAOptions> = {
 	registerType: "prompt",
 	manifest: {
-    "theme_color": "#f69435",
-    "background_color": "#f69435",
+    "theme_color": "#000000",
+    "background_color": "#000000",
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
@@ -40,6 +38,6 @@ const manifestForPlugin: Partial<VitePWAOptions> = {
 };
 
 export default defineConfig({
-	base: "./",
+	base: "/",
 	plugins: [react(), VitePWA(manifestForPlugin)],
 });
