@@ -11,7 +11,7 @@ const manifestForPlugin: Partial<VitePWAOptions> = {
     "scope": "/",
     "start_url": "/",
     "name": "RealTrip Calculadora",
-    "short_name": "RealTrip",
+    "short_name": "RealTrip Calculadora",
     "icons": [
         {
             "src": "/icon-192x192.png",
