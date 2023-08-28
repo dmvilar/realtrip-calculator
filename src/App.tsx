@@ -7,7 +7,6 @@ import {
   Heading,
   Switch,
   Text,
-  Image,
 } from "@chakra-ui/react";
 import "./App.css";
 import Calculator from "./components/Calculator";
