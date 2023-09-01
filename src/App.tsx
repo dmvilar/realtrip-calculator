@@ -17,6 +17,8 @@ function App() {
   const [valorTotalIda, setValorTotalIda] = useState(0);
   const [valorTotalVolta, setValorTotalVolta] = useState(0);
   const [valorTotal, setValorTotal] = useState(0);
+  const [qtdTotalMilhas, setQtdTotalMilhas] = useState(0);
+  const [valorTotalTaxa, setValorTotalTaxa] = useState(0);
 
   const [vooIdaProps, setVooIdaProps] = useState({
     qtdMilhas: 0,
@@ -36,7 +38,18 @@ function App() {
   useEffect(() => {
     if (mostrarVolta) {
       setValorTotal(valorTotalIda + valorTotalVolta);
-    } else setValorTotal(valorTotalIda);
+
+      const totalMilhas =
+        Number.parseFloat(vooIdaProps.qtdMilhas.toString()) +
+        Number.parseFloat(vooVoltaProps.qtdMilhas.toString());
+      const totalTaxa =
+        Number.parseFloat(vooIdaProps.valorTaxa.toString()) +
+        Number.parseFloat(vooVoltaProps.valorTaxa.toString());
+      setQtdTotalMilhas(totalMilhas);
+      setValorTotalTaxa(totalTaxa);
+    } else {
+      setValorTotal(valorTotalIda);
+    }
   }, [
     valorTotalIda,
     valorTotalVolta,
@@ -87,7 +100,15 @@ function App() {
         <Divider borderColor="green" width={"100%"} />
         <AbsoluteCenter bg="white" border={"solid 1px green"} px="4">
           <Text>{"Custo total:"}</Text>
-          <Text fontSize="xl">{"R$" + valorTotal.toFixed(2)}</Text>
+          <Text fontSize="xl" as={"b"}>{"R$" + valorTotal.toFixed(2)}</Text>
+          {mostrarVolta && (
+            <>
+              <Text>
+                {"Quantidade de milhas: " + qtdTotalMilhas.toFixed(2) + "K"}
+              </Text>
+              <Text>{"Valor taxa: R$" + valorTotalTaxa.toFixed(2)}</Text>
+            </>
+          )}
         </AbsoluteCenter>
       </Box>
     </>
