@@ -96,7 +96,7 @@ function App() {
         </Box>
       )}
 
-      <Box position="relative" paddingTop="10" paddingBottom="10">
+      <Box position="relative" marginTop={mostrarVolta ? "6rem" : "3rem"} marginBottom={"8rem"}>
         <Divider borderColor="green" width={"100%"} />
         <AbsoluteCenter bg="white" border={"solid 1px green"} px="4">
           <Text>{"Custo total:"}</Text>
