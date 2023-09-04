@@ -39,10 +39,10 @@ function App() {
     if (mostrarVolta) {
       setValorTotal(valorTotalIda + valorTotalVolta);
 
-      if (vooIdaProps.qtdMilhas !== null && vooVoltaProps.qtdMilhas !== null) {
+      if ((vooIdaProps.qtdMilhas !== null || vooIdaProps.qtdMilhas !== undefined) && (vooVoltaProps.qtdMilhas !== null || vooVoltaProps.qtdMilhas !== undefined)) {
         const totalMilhas =
-          Number.parseFloat(vooIdaProps.qtdMilhas.toString()) +
-          Number.parseFloat(vooVoltaProps.qtdMilhas.toString());
+          Number.parseFloat(vooIdaProps?.qtdMilhas.toString()) +
+          Number.parseFloat(vooVoltaProps?.qtdMilhas.toString());
         const totalTaxa =
           Number.parseFloat(vooIdaProps.valorTaxa.toString()) +
           Number.parseFloat(vooVoltaProps.valorTaxa.toString());
