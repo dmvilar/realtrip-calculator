@@ -39,7 +39,9 @@ function App() {
     if (mostrarVolta) {
       setValorTotal(valorTotalIda + valorTotalVolta);
 
-      if ((vooIdaProps.qtdMilhas !== null || vooIdaProps.qtdMilhas !== undefined) && (vooVoltaProps.qtdMilhas !== null || vooVoltaProps.qtdMilhas !== undefined)) {
+      console.log('vooIdaProps.qtdMilhas', vooIdaProps.qtdMilhas);
+      
+      if ((vooIdaProps.qtdMilhas !== null && vooIdaProps.qtdMilhas !== undefined) && (vooVoltaProps.qtdMilhas !== null && vooVoltaProps.qtdMilhas !== undefined)) {
         const totalMilhas =
           Number.parseFloat(vooIdaProps?.qtdMilhas.toString()) +
           Number.parseFloat(vooVoltaProps?.qtdMilhas.toString());
