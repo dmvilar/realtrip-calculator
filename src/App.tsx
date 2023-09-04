@@ -39,14 +39,16 @@ function App() {
     if (mostrarVolta) {
       setValorTotal(valorTotalIda + valorTotalVolta);
 
-      const totalMilhas =
-        Number.parseFloat(vooIdaProps.qtdMilhas.toString()) +
-        Number.parseFloat(vooVoltaProps.qtdMilhas.toString());
-      const totalTaxa =
-        Number.parseFloat(vooIdaProps.valorTaxa.toString()) +
-        Number.parseFloat(vooVoltaProps.valorTaxa.toString());
-      setQtdTotalMilhas(totalMilhas);
-      setValorTotalTaxa(totalTaxa);
+      if (vooIdaProps.qtdMilhas !== null && vooVoltaProps.qtdMilhas !== null) {
+        const totalMilhas =
+          Number.parseFloat(vooIdaProps.qtdMilhas.toString()) +
+          Number.parseFloat(vooVoltaProps.qtdMilhas.toString());
+        const totalTaxa =
+          Number.parseFloat(vooIdaProps.valorTaxa.toString()) +
+          Number.parseFloat(vooVoltaProps.valorTaxa.toString());
+        setQtdTotalMilhas(totalMilhas);
+        setValorTotalTaxa(totalTaxa);
+      }
     } else {
       setValorTotal(valorTotalIda);
     }
@@ -109,7 +111,9 @@ function App() {
           </Text>
           {mostrarVolta && (
             <>
-              <Text>{"Quantidade de milhas: " + qtdTotalMilhas.toFixed(2) + "K"}</Text>
+              <Text>
+                {"Quantidade de milhas: " + qtdTotalMilhas.toFixed(2) + "K"}
+              </Text>
               <Text>{"Valor taxa:"}</Text>
               <Text>{"R$" + valorTotalTaxa.toFixed(2)}</Text>
             </>
