@@ -32,10 +32,10 @@ const FormNumberInputWithRange: React.FC<NumberInputProps> = (props) => {
   const handleChange = (value:any) => {
     
     if(typeof(value) === typeof(0)){
-      props.setValue(value);
+      props.setValue(Number(value));
     }
     else if(value?.target?.value !== ""){
-      props.setValue(value?.target?.value.replace(',', '.'));
+      props.setValue(Number(value?.target?.value.replace(',', '.')));
     }
     else{
       props.setValue(null)

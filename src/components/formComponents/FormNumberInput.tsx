@@ -52,7 +52,7 @@ const FormNumberInput: React.FC<NumberInputProps> = (props) => {
       <FormLabel>{props.label}</FormLabel>
       <HStack maxW='320px'>
       <Button onClick={dec}>-</Button>
-      <Input {...input} bg={'white'} value={props.value} onChange={handleChange} />
+      <Input {...input} bg={'white'} value={props.value} onChange={handleChange}/>
       <Button onClick={inc}>+</Button>
     </HStack>
     </FormControl>
