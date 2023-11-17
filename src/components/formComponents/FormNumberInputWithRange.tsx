@@ -21,21 +21,24 @@ type NumberInputProps = {
 };
 const FormNumberInputWithRange: React.FC<NumberInputProps> = (props) => {
   const inc = () => {
+    if(props.value === undefined){
+      props.setValue(1);
+    }
     if(props.value < 300)
-      props.setValue(props.value + 1);
+      props.setValue(+props.value + 1);
   };
   const dec = () => {
     if(props.value > 1)
-      props.setValue(props.value - 1);
+      props.setValue(+props.value - 1);
   };
 
   const handleChange = (value:any) => {
     
     if(typeof(value) === typeof(0)){
-      props.setValue(Number(value));
+      props.setValue(value);
     }
     else if(value?.target?.value !== ""){
-      props.setValue(Number(value?.target?.value.replace(',', '.')));
+      props.setValue(value?.target?.value.replace(',', '.'));
     }
     else{
       props.setValue(null)
