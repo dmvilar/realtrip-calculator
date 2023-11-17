@@ -104,7 +104,7 @@ function App() {
   return (
     <>
       <Heading marginBottom={"1rem"}>{"Calculadora RealTrip"}</Heading>
-      <Heading marginBottom={"1rem"} fontSize={"2xl"}>{"v1.0.2"}</Heading>
+      <Heading marginBottom={"1rem"} fontSize={"2xl"}>{"v1.2.1"}</Heading>
       <Calculator
         titulo="Voo Ida"
         qtdMilhas={qtdMilhasIda}
